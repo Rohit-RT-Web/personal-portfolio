@@ -1,0 +1,570 @@
+/* =========================================
+   ROHIT KUMAR PORTFOLIO - MAIN STYLE
+   Style: Modern Professional Glassmorphism
+   ========================================= */
+
+/* --- 1. CORE VARIABLES & DEFAULTS --- */
+:root {
+    --bg-light: #f1faff;
+    --bg-mesh-linear: linear-gradient(135deg, #cdefff 0%, #ffffff 50%, #d8f3ff 100%);
+    --sky-600: #0ea5e9;
+    --sky-100: #e0f2fe;
+    --sky-text: #0369a1;
+    --gray-950: #030712;
+    --gray-900: #111827;
+    --gray-700: #374151;
+    --gray-600: #4b5563;
+    --gray-500: #6b7280;
+    
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-blur: blur(8px);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.25);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    
+    --ease-smooth: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--gray-900);
+    line-height: 1.6;
+}
+
+/* --- 2. GLOBAL UTILITY CLASSES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg-mesh {
+    background-image: var(--bg-mesh-linear);
+    background-attachment: fixed;
+}
+
+.text-sky { color: var(--sky-600); }
+.justify-left { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+
+.mt-50 { margin-top: 50px; }
+.mt-100 { margin-top: 100px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+.p-40 { padding: 40px; }
+.p-100 { padding: 100px 40px; }
+
+.rounded-lg { border-radius: 8px; }
+.rounded-xl { border-radius: 12px; }
+.rounded-2xl { border-radius: 20px; }
+
+.icon-m { width: 32px; height: 32px; }
+.icon-l { width: 64px; height: 64px; }
+
+.flex { display: flex; align-items: center; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
+
+.border-t { border-top: 1px solid rgba(0,0,0,0.05); }
+
+.ml-auto { margin-left: auto; }
+
+/* Glassmorphism Effect Base */
+.glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--card-shadow);
+}
+
+.glass-inner {
+    background: rgba(14, 165, 233, 0.05); /* very subtle blue inner glass */
+    border: 2px border-solid rgba(255,255,255,0.6);
+}
+
+/* Base Interactions */
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.hover-translate:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom fade in animation on load */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.aos-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* --- 3. COMMON SECTION COMPONENTS --- */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--gray-950);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: var(--ease-smooth);
+}
+
+.btn-hero {
+    margin-top: 30px;
+    color: var(--sky-text);
+    border-bottom: 2px solid var(--sky-100);
+}
+
+.btn-hero:hover {
+    border-bottom-color: var(--sky-600);
+    transform: translateY(-2px);
+}
+
+/* --- 4. NAVIGATION STYLE --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.7); /* Slightly whiter background */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+}
+
+.logo-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(14, 165, 233, 0.1);
+    border: 2px solid var(--sky-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sky-600);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 12px;
+}
+
+.logo-text {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gray-950);
+    margin-top: 19px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gray-900);
+    font-weight: 600;
+    transition: var(--ease-smooth);
+    margin-top: 15px;
+}
+
+.nav-links a:hover {
+    color: var(--sky-600);
+}
+
+/* --- 5. HERO SECTION STYLE --- */
+.hero {
+    min-height: 90vh;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.hero-sub {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sky-600);
+    margin-bottom: 5px;
+}
+
+.hero-main {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--gray-950);
+}
+
+.hero-main .highlight {
+    color: var(--sky-600);
+    background-color: var(--sky-100);
+    padding: 0 10px;
+    border-radius: 12px;
+}
+
+.hero-tag {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: var(--gray-900);
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin: 30px auto 0;
+    color: var(--gray-700);
+}
+
+.hero-photo-wrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px auto;
+    border: 9px margin-solid rgba(255,255,255,0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Photo Wrapper pe Glow aur Shadow */
+.hero-photo-wrapper {
+    position: relative;
+    border-radius: 50%; /* Circle shape ke liye */
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(14, 165, 233, 0.3);
+    box-shadow: 0 0 50px rgba(14, 165, 233, 0.2); /* Soft Blue Glow */
+    animation: float 4s ease-in-out infinite; /* Floating Effect */
+    transition: all 0.5s ease;
+
+}
+
+/* Hover karne par Glow badh jayega */
+.hero-photo-wrapper:hover {
+    box-shadow: 0 0 80px rgba(14, 165, 233, 0.5);
+    border-color: #0ea5e9;
+    transform: scale(1.02);
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* 20px upar jayega */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Background Glow Effect (Optional) */
+.hero-photo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* --- 6. ABOUT SECTION STYLE --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-photo-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px margin-solid rgba(255,255,255,0.8);
+    background: #fff;
+    margin: 0 auto;
+}
+
+.about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 7. EDUCATION TIMELINE STYLE --- */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(14, 165, 233, 0.2);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+.timeline-left { left: 0; }
+.timeline-right { left: 55%; }
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--sky-600);
+    border: 3px margin-solid rgba(255,255,255,1);
+    box-shadow: 0 0 10px rgba(14,165,233,0.3);
+}
+
+.timeline-left .timeline-content::before { right: -65px; }
+.timeline-right .timeline-content::before { left: -65px; }
+
+.timeline-year {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-600);
+}
+
+.timeline-degree {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-950);
+}
+
+.timeline-inst {
+    color: var(--gray-700);
+    font-size: 0.95rem;
+}
+
+.timeline-cgpa {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 12px;
+    background-color: rgba(14, 165, 233, 0.05);
+    color: var(--sky-text);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* --- 8. SKILLS STYLE --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    transition: var(--ease-smooth);
+}
+
+.skill-item .skill-icon {
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+/* --- 9. PROJECTS STYLE --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    border-radius: 20px;
+    transition: var(--ease-smooth);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.project-placeholder {
+    transition: var(--ease-smooth);
+    background: rgba(14, 165, 233, 0.02); /* very subtle blue inner glass */
+    border: 2px dashed rgba(14, 165, 233, 0.2);
+}
+
+.project-placeholder:hover {
+    background: #fff;
+    border-style: solid;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-950);
+}
+
+.card-desc {
+    color: var(--gray-700);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-link {
+    text-decoration: none;
+    transition: var(--ease-smooth);
+}
+
+.card-link:hover {
+    transform: translateX(3px);
+}
+
+/* --- 10. ACHIEVEMENTS STYLE --- */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achieve-card {
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.achieve-year {
+    font-weight: 500;
+    color: var(--sky-600);
+    font-size: 0.85rem;
+}
+
+.achieve-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-950);
+}
+
+/* --- 11. CONTACT STYLE --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.contact-card {
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    transition: var(--ease-smooth);
+}
+
+.contact-type {
+    font-size: 1.1rem;
+    color: var(--gray-950);
+}
+
+/* --- 12. RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 991px) {
+    .container { padding: 0 40px; }
+    .hero-photo-wrapper { width: 150px; height: 150px; }
+    .hero-main { font-size: 3rem; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+    .navbar { padding: 0 10px; }
+    .nav-links { display: none; } /* Hide links on mobile for now */
+    .hero-main { font-size: 2.25rem; }
+    .hero-photo-wrapper { width: 120px; height: 120px; }
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
+    .timeline::before { left: 20px; transform: translateX(0); }
+    .timeline-item { width: 100%; left: 0; padding-left: 50px; margin-bottom: 20px; }
+    .timeline-left .timeline-content::before { left: -45px; }
+    .timeline-right .timeline-content::before { left: -45px; }
+}
