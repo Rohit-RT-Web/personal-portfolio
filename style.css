@@ -733,6 +733,7 @@ body.dark-mode span {
   margin-top: 40px;
   padding: 40px;
   border-radius: 20px;
+  max-width: 565px;
 }
 
 .contact-form-box h3 {
@@ -769,8 +770,8 @@ body.dark-mode span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
-  margin-top: 60px;
+  gap: 30px;
+  margin-top: 0%;
   flex-wrap: wrap;
 }
 
@@ -778,15 +779,15 @@ body.dark-mode span {
   flex: 1;
   text-align: center;
   border-radius: 20px;
-  margin-top: 40px;
-  margin-left: none;
+  margin-top: 38px;
+  margin-left: 2px;
 }
 
 .contact-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 540px;
   border-radius: 15px;
-  height: 400px;
+  height: 413px;
   margin-top: 10px;
 }
 
