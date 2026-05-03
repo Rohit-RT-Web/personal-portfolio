@@ -282,12 +282,35 @@ body {
 }
 
 /* --- 5. HERO SECTION STYLE --- */
+/* ================================
+   HERO SECTION (FINAL FIXED)
+   ================================ */
+
 .hero {
   min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 60px;
   padding-bottom: 50px;
 }
 
+/* MAIN LAYOUT */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+}
+
+/* LEFT TEXT SIDE */
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* TEXT STYLES */
 .hero-sub {
   font-size: 1.5rem;
   font-weight: 700;
@@ -318,58 +341,69 @@ body {
 
 .hero-desc {
   font-size: 1.1rem;
-  max-width: 750px;
-  margin: 30px auto 0;
+  max-width: 650px;
+  margin-top: 20px;
   color: var(--gray-700);
 }
 
+/* BUTTONS spacing fix */
+.hero .btn-hero {
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+/* ================================
+   IMAGE SECTION
+   ================================ */
+
 .hero-photo-wrapper {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 30px auto;
-  border: 9px margin-solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
-  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-/* Photo Wrapper pe Glow aur Shadow */
-.hero-photo-wrapper {
   position: relative;
-  border-radius: 50%; /* Circle shape ke liye */
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 2px solid rgba(14, 165, 233, 0.3);
-  box-shadow: 0 0 50px rgba(14, 165, 233, 0.2); /* Soft Blue Glow */
-  animation: float 4s ease-in-out infinite; /* Floating Effect */
-  transition: all 0.5s ease;
+  box-shadow: 0 0 50px rgba(14, 165, 233, 0.2);
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.4s ease;
+  margin-right: 50px;
+  margin-top: 50px;
 }
 
-/* Hover karne par Glow badh jayega */
+/* hover glow */
 .hero-photo-wrapper:hover {
   box-shadow: 0 0 80px rgba(14, 165, 233, 0.5);
-  border-color: #0ea5e9;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* Floating Animation Keyframes */
+/* IMAGE */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* FLOAT ANIMATION */
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px); /* 20px upar jayega */
+    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0px);
   }
 }
 
-/* Background Glow Effect (Optional) */
+/* BACKGROUND GLOW */
 .hero-photo-wrapper::before {
   content: "";
   position: absolute;
@@ -386,11 +420,27 @@ body {
   z-index: -1;
 }
 
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-photo-wrapper {
+    margin-top: 30px;
+  }
+
+  .hero-main {
+    font-size: 2.8rem;
+  }
 }
 
 /* --- 6. ABOUT SECTION STYLE --- */
@@ -725,9 +775,12 @@ body.dark-mode h4,
 body.dark-mode p,
 body.dark-mode a,
 body.dark-mode span {
-  color: #fff !important;
+  color: #ffffff;
 }
 
+body.dark-mode #name {
+  color: #0ea5e9;
+}
 /* CONTACT FORM */
 .contact-form-box {
   margin-top: 40px;

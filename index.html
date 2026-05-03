@@ -33,20 +33,34 @@
     </nav>
 
     <main class="container main-content">
- <section id="hero" class="hero text-center">
-            <p class="hero-sub aos-fadeIn" data-aos-delay="100">Hey, Welcome to my Portfolio</p>
-            <h1 class="hero-main aos-fadeIn" data-aos-delay="300">I'm <span class="highlight">Rohit Kumar</span></h1>
-            <p class="hero-tag aos-fadeIn" data-aos-delay="500">Aspiring Web Developer </p>
-            
-            <div class="hero-photo-wrapper glass" data-aos="zoom-in" data-aos-delay="800">
-                <img src="rohit.png" alt="Rohit Kumar" class="hero-photo">
-            </div>
+<section id="hero" class="hero">
 
-            <p class="hero-desc aos-fadeIn" data-aos-delay="1000">Currently pursuing BCA from MJPRU (DISHA Institute). I have a strong foundation in HTML, CSS, and JavaScript, and I am actively working on real problem solving multiple projects. I enjoy solving problems and am constantly learning new technologies.</p>
-            
-            <a href="#about" class="btn btn-hero" data-aos="fade-up" data-aos-delay="1200">Learn More ↓</a>
-        </section>
+  <div class="hero-layout">
 
+    <div class="hero-text">
+      <p class="hero-sub aos-fadeIn" data-aos-delay="100">Hey, Welcome to my Portfolio</p>
+
+      <h1 class="hero-main aos-fadeIn" data-aos-delay="300">
+        I'm <span class="highlight" id="name">Rohit Kumar</span>
+      </h1>
+
+      <p class="hero-tag aos-fadeIn" data-aos-delay="500">Aspiring Web Developer</p>
+
+      <p class="hero-desc aos-fadeIn" data-aos-delay="1000">
+        Currently pursuing BCA from MJPRU (DISHA Institute). I have a strong foundation in HTML, CSS, and JavaScript, and I am actively working on real problem solving multiple projects. I enjoy solving problems and am constantly learning new technologies.
+      </p>
+
+      <a href="#about" class="btn btn-hero" data-aos="fade-up" data-aos-delay="1200">Learn More ↓</a>
+      <a href="CV-ROHIT (1).pdf" download class="btn btn-hero" data-aos="fade-up" data-aos-delay="1200">Download CV</a>
+    </div>
+
+    <div class="hero-photo-wrapper glass" data-aos="zoom-in" data-aos-delay="800">
+      <img src="rohit2.jpeg" alt="Rohit Kumar" class="hero-photo">
+    </div>
+
+  </div>
+
+</section>
         <section id="about" class="about glass p-100 rounded-2xl" data-aos="fade-up">
             <div class="section-header justify-left">
                 <svg class="icon-m text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
@@ -203,6 +217,7 @@
                rel="noopener noreferrer" 
                class="card-link ml-auto text-sky flex justify-center gap-2 font-semibold">
                Live Demo →
+    
             </a>
         </div>
     </div>
